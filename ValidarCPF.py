@@ -36,3 +36,5 @@ cpf_conferido = nove_digitos + str(digito_1) + str(digito_2)
 if cpf_conferido == cpf:
     print(f"Resultado: {cpf_conferido}")
     print(f"Seu cpf de numero {cpf} e totalmente válido.")
+else:
+    print("cpf inválido.")
