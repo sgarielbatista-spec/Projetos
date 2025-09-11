@@ -1,15 +1,8 @@
-cpf = "190.367.030-69" 
-cpf_limpo = ""
+cpf = "190.367.030-69".replace(".", "").replace("-", "")
 
-#removendo caracteres especiais
-for indice in range(len(cpf)):
-    if cpf[indice] in '.-':
-        continue
-    else:
-        cpf_limpo += cpf[indice]
 
 #pegando os 9 primeiros dígitos
-nove_digitos = cpf_limpo[:9]
+nove_digitos = cpf[:9]
 
 #fazendo a multiplicação decrecesnte com 10 a cada caractere convertido em int, e somando tudo
 numero10 = 10
@@ -40,6 +33,6 @@ digito_2 = 0 if digito_2 > 9 else digito_2
 cpf_conferido = nove_digitos + str(digito_1) + str(digito_2)
 
 #imprimindo resultado
-if cpf_conferido == cpf_limpo:
+if cpf_conferido == cpf:
     print(f"Resultado: {cpf_conferido}")
     print(f"Seu cpf de numero {cpf} e totalmente válido.")
