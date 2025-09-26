@@ -16,28 +16,37 @@ perguntas = [
         "resposta": "20",
     }
 ]
+
 lista_correcao = []
 numero_questoes_certas = 0
-for q in range(len(perguntas)):
-    print(perguntas[q]["pergunta"])
 
+for q in range(len(perguntas)): 
+    print(perguntas[q]["pergunta"]) #imprime as perguntas
+
+    #imprime índice e valor
     for indice, valor in enumerate(perguntas[q]["opções"]):
         print(f"{indice}){valor}")
+
+
     try:
-        resposta = int(input("reponda: "))
+        resposta = int(input("reponda: ")) #resposta pelo índice
+
+        #Adiciona True na lista caso a resposta esteja certa ou False caso estja errada
         if perguntas[q]['opções'][resposta] == perguntas[q]["resposta"]:
             lista_correcao.append(True)
-            numero_questoes_certas += 1
+            numero_questoes_certas += 1 #contador de questões certas
         else:
             lista_correcao.append(False)
     except (ValueError, IndexError):
         lista_correcao.append(False)
         continue
+
 os.system("cls")
 
 print(f"Você acertou {numero_questoes_certas} questões.")
-print(f"Você acertou as questões")
+print(f"Você acertou as questões.")
 
+#exibe as questões que foram acertadas
 for i, valor in enumerate(lista_correcao):
     if valor:
         print(perguntas[i]["pergunta"])
