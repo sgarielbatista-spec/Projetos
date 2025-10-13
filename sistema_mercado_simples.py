@@ -17,7 +17,7 @@ def adicionar_banco(nome, preco):
     conexao.commit()
 
 def ver_banco():
-    cursor.execute("SELECT * FROM produtos")
+    cursor.execute("SELECT * FROM produtos ORDER BY nome ASC")
     conteudo_banco = cursor.fetchall()
     if not conteudo_banco:
         print("")
